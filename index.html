@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Aggresion</title>
+    <meta charset='utf-8' />
+</head>
+<body onload="startGame()">
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	</style>
+	<input id="option_points_number" type="text" placeholder="Points number">
+	<input id="option_generate" type="button" value="Generate">
+	<input id="option_clear" type="button" value="Clear">
+	<script>
+	
+		var locations = {};
+		function startGame() {
+			Game.start();
+			generateLocations(5);
+			risePopulation();
+		}
+		
+		var Game = {
+			canvas : document.createElement("canvas"),
+			start : function() {
+				this.canvas.height = document.documentElement.clientHeight;
+				this.canvas.width  = document.documentElement.clientWidth;
+				this.context = this.canvas.getContext("2d");
+				document.body.insertBefore(this.canvas, document.body.childNodes[10]);
+				this.interval = setInterval(updateGame, 20);
+			},
+			clear : function() {
+				this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+			}
+		}
+		
+		function updateGame() {
+			Game.clear();
+			for(var i = 0; i < 5; i++){
+				locations[i].update();
+			}
+		}
+		
+		function risePopulation() {
+		setInterval(function(){
+				for(var i = 0; i < 5; i++){
+					locations[i].risePopulation();
+				}
+			}, 10000);
+		}
+		
+		Game.canvas.addEventListener("click", function(e){
+					console.log('You clicked');
+					for(var i = 0; i < 5; i++){
+						if (e.clientX  < (locations[i].x + locations[i].radius) && e.clientX > (locations[i].x - locations[i].radius) && 
+							e.clientY > (locations[i].y - locations[i].radius) && e.clientY < (locations[i].y + locations[i].radius)){
+							locations[i].clicked(i);
+						}
+					}
+				}, false);
+		
+		function Location(id, x, y, radius, population, grow, growLimit){
+			this.id = id;
+			this.x = x;
+			this.y = y;
+			this.radius = radius;
+			this.population = population;
+			this.grow = grow;
+			this.growLimit = growLimit;
+
+			this.owner = function(){
+				
+			};
+			this.update = function() {
+				ctx = Game.context;
+				ctx.beginPath();
+				ctx.fillStyle = 'blue';
+				ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+				ctx.fill();
+				ctx.fillStyle = '#000000';
+				ctx.font = "normal 12px Arial";
+				ctx.fillText(this.population, this.x - 5, this.y + 5);
+				ctx.closePath();
+			};
+			this.clicked = function(i){
+				if(this.id == i){
+					console.log('Location: ' + this.id + " " + this.population);
+					ctx.fillStyle = 'red';
+					ctx.fill();
+				}
+			};
+			this.risePopulation = function(){
+				this.population = this.population + 1;
+			};
+		}
+		
+		 
+		function generateLocations(n){
+			for(var i = 0; i < n; i++){
+				randX = Math.floor((Math.random() * 1000) + 100);
+				randY = Math.floor((Math.random() * 400) + 100);
+				locations[i] = new Location(i, randX, randY, 50, 0, 1, 10);
+			}
+		}
+		
+	</script>
+</body>
+</html>
