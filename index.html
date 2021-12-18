@@ -63,8 +63,9 @@
 						card.classList.add('dnd_card');
 						if( i < zoneNumber ){
 							card.classList.add('enemy');
+						} else {
+							card.setAttribute('draggable', 'true');
 						}
-						card.setAttribute('draggable', 'true');
 						card.setAttribute('data-hp', Math.floor(Math.random() * 20));
 						card.setAttribute('data-dmg', Math.floor(Math.random() * 10));
 						zone.append(card);
@@ -86,10 +87,8 @@
 					placed.dataset.hp = placed.dataset.hp*1 - holdedDMG;
 					holded.dataset.hp = holded.dataset.hp*1 - placedDMG;
 					if( placed.dataset.hp*1 > 0 && holded.dataset.hp*1 < 1 ){
-						console.log('111');
 						holded.remove();
 					} else {
-						console.log('222');
 						placed.parentNode.append(holded);
 						placed.remove();
 					}
@@ -149,10 +148,12 @@
 		}
 		#dnd_board .dnd_card{
 			box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 64%);
+			background-image: url('../akulbacki.github.io/assets/img/cardback.png');
+			background-size: cover;
+			background-position: -6px;
 			width: 140px;
 			height: 200px;
 			position: relative;
-			cursor: move;
 			z-index: 10;
 		}
 		#dnd_board .dnd_zone + .dnd_card, #dnd_board .dnd_card + .dnd_card{
@@ -174,17 +175,20 @@
 		#dnd_board .dnd_card::before {
 			content: attr(data-hp);
 			right: 0;
-			background-color: green;
+			background-color: #4c7e4c;
+			border: 2px solid #4cb44c;
 		}
 		#dnd_board .dnd_card::after {
 			content: attr(data-dmg);
 			left: 0;
-			background-color: red;
+			background-color: #b83838;
+			border: 2px solid red;
 		}
 		#dnd_board .dnd_card.enemy{
 			background-color: rgb(211, 83, 83);
 		}
 		#dnd_board .dnd_card:not(.enemy){
+			cursor: move;
 			background-color: rgb(92, 170, 243);
 		}
 		#dnd_board .dnd_card.hold{
