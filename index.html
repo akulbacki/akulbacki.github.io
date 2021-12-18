@@ -1,231 +1,194 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Own Css library | Aleksey Kulbacki</title>
-	<style>
-		*{
-			padding: 0;
-			margin: 0;
-		}
-		:root {
-		  --primary-color: #673AB7;
-		  --secondary-color: #4CAF50;
-		}
-		.carcase{
-			display: grid;
-			margin: 15px auto;
-		}
-		.boxed{
-			max-width: 1280px;
-		}
-		.fixed{
-			position: fixed;
-		}
-		.carcase .col{
-			padding: 15px;
-			margin: 0 15px;
-		}
-		.img-wrap{
-			position: relative;
-			height: 100%;
-			display: block;
-		}
-		.img-wrap img{
-			position: absolute;
-			width: 100%;
-			height: 100%;
-		}
-		.img-limited{
-			min-height: 250px;
-		}
-		.btm-space-1{
-			margin-bottom: 15px;
-		}
-		.btm-space-2{
-			margin-bottom: 30px;
-		}
-		.right-sidebar{
-		    grid-template-columns: auto 25%;
-		}
-		.both-sidebar{
-		    grid-template-columns: 25% auto 25%;
-		}
-		.left-sidebar{
-		    grid-template-columns: 25% auto;
-		}
-		.vertical-menu{
-			padding-left: 15px;
-		}
-		.vertical-menu li{
-			list-style: none;
-		}
-		.vertical-menu li a{
-			text-decoration: none;
-			color: var(--primary-color);
-			transition: 0.1s;
-		}
-		.vertical-menu li:hover a{
-			font-weight: bold;
-		}
-		[class*="grid-col-"]{
-			grid-row-gap: 15px;
-			grid-column-gap: 15px;
-		}
-		.grid-col-2{
-			grid-template-columns: 1fr 1fr;
-		}
-		.grid-col-3{
-			grid-template-columns: 1fr 1fr 1fr;
-		}
-		.grid-col-4{
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-		}
-		.carcase .img-wrap {
-			min-height: 125px;
-		}
-		a.img-wrap{
-			transition: 0.4s;
-		}
-		a.img-wrap:hover{
-			opacity: 0.6;
-		}
-		.card{
-			display: grid;
-			grid-row-gap: 15px;
-			grid-template-rows: 250px 0.2fr 1fr auto;
-		}
-		.card-actions .btn + .btn{
-			margin-left: 15px;
-		}
-		.ttl-section{
-			text-transform: uppercase;
-			font-weight: bold;
-		}
-		.ttl{
-			font-weight: bold;
-		}
-		.intro {
-			max-height: 180px;
-			overflow-y: hidden;
-		}
-		.btn{
-			text-decoration: none;
-			text-align: center;
-			transition: 0.4s;
-			padding: 5px 15px;
-			margin: auto 0;
-			display: inline-block;
-		}
-		.btn-filled{
-			border: 1px solid transparent;
-			background-color: var(--primary-color);
-			color: #fff;
-		}
-		.btn-outlined{
-			border: 1px solid var(--primary-color);
-			background-color: transparent;
-			color: var(--primary-color);
-		}
-		.btn-filled:hover{
-			border: 1px solid var(--primary-color);
-			background-color: transparent;
-			color: var(--primary-color);
-		}
-		.btn-outlined:hover{
-			border: 1px solid transparent;
-			background-color: var(--primary-color);
-			color: #fff;
-		}
-	</style>
+	<title>Pure Card Game</title>
 </head>
 <body>
-	<div class="header">
-		<div class=""></div>
-		<div class=""></div>
-		<div class=""></div>
-		<div class=""></div>
-		<div class=""></div>
-	</div>
-	<div>
-		<div class="carcase boxed both-sidebar">
-			<div class="col">
-				<div class="sidebar fixed">
-					<div class="ttl-section btm-space-2">Fixed vertical menu</div>
-					<ul class="vertical-menu">
-						<li class=""><a class="" href="#">Lorem ipsum dolor</a></li>
-						<li class=""><a class="" href="#">Lorem ipsum dolor</a></li>
-						<li class=""><a class="" href="#">Lorem ipsum dolor</a></li>
-						<li class=""><a class="" href="#">Lorem ipsum dolor</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col">
-				<div class="ttl-section btm-space-2">News feed - full weight</div>
-				<div class="card btm-space-2">
-					<div class="img-wrap"><img src="https://via.placeholder.com/580x250?text=580x250"></div>
-					<div class="ttl">Lorem ipsum dolor sit amet</div>
-					<div class="card-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et tellus in quam ultricies blandit sit amet eu turpis. Duis quis pretium nunc. Suspendisse fermentum felis nisl, in eleifend enim finibus sed. Aenean gravida cursus mauris, quis placerat lorem egestas sodales. Nullam ac accumsan justo, nec eleifend diam. Pellentesque commodo consectetur ultricies. Vestibulum leo ex, aliquet vitae ex a, gravida dapibus mi.</div>
-					<div class="card-actions"><a class="btn btn-filled" href="#">Read more</a></div>
-				</div>
-				<div class="card btm-space-2">
-					<div class="img-wrap"><img src="https://via.placeholder.com/580x250?text=580x250"></div>
-					<div class="ttl">Lorem ipsum dolor sit amet</div>
-					<div class="card-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et tellus in quam ultricies blandit sit amet eu turpis. Duis quis pretium nunc. Suspendisse fermentum felis nisl, in eleifend enim finibus sed. Aenean gravida cursus mauris, quis placerat lorem egestas sodales. Nullam ac accumsan justo, nec eleifend diam. Pellentesque commodo consectetur ultricies. Vestibulum leo ex, aliquet vitae ex a, gravida dapibus mi.</div>
-					<div class="card-actions"><a class="btn btn-filled" href="#">Read more</a><a class="btn btn-outlined" href="#">And more</a><a class="btn btn-outlined" href="#">And more</a></div>
-				</div>
-				<div class="ttl-section btm-space-2">News feed - 2 column</div>
-				<div class="carcase grid-col-2">
-					<div class="card btm-space-2">
-						<div class="img-wrap"><img src="https://via.placeholder.com/480x480?text=480x480"></div>
-						<div class="ttl">Lorem ipsum dolor sit amet</div>
-						<div class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et tellus in quam ultricies blandit sit amet eu turpis. Duis quis pretium nunc. Suspendisse fermentum felis nisl, in eleifend enim finibus sed. Aenean gravida cursus mauris, quis placerat lorem egestas sodales. Nullam ac accumsan justo, nec eleifend diam. Pellentesque commodo consectetur ultricies. Vestibulum leo ex, aliquet vitae ex a, gravida dapibus mi.</div>
-						<a class="btn btn-filled" href="#">Read more</a>
-					</div>
-					<div class="card btm-space-2">
-						<div class="img-wrap"><img src="https://via.placeholder.com/480x480?text=480x480"></div>
-						<div class="ttl">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</div>
-						<div class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et tellus in quam ultricies blandit sit amet eu turpis. Duis quis pretium nunc. Suspendisse fermentum felis nisl, in eleifend enim finibus sed. Aenean gravida cursus mauris, quis placerat lorem egestas sodales. Nullam ac accumsan justo, nec eleifend diam. Pellentesque commodo consectetur ultricies. Vestibulum leo ex, aliquet vitae ex a, gravida dapibus mi.</div>
-						<a class="btn btn-filled" href="#">Read more</a>
-					</div>
-					<div class="card btm-space-2">
-						<div class="img-wrap"><img src="https://via.placeholder.com/480x480?text=480x480"></div>
-						<div class="ttl">Lorem ipsum dolor sit amet</div>
-						<div class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et tellus in quam ultricies blandit sit amet eu turpis.</div>
-						<a class="btn btn-filled" href="#">Read more</a>
-					</div>
-					<div class="card btm-space-2">
-						<div class="img-wrap"><img src="https://via.placeholder.com/480x480?text=480x480"></div>
-						<div class="ttl">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</div>
-						<div class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et tellus in quam ultricies blandit sit amet eu turpis. Duis quis pretium nunc. Suspendisse fermentum felis nisl, in eleifend enim finibus sed. Aenean gravida cursus mauris, quis placerat lorem egestas sodales. Nullam ac accumsan justo, nec eleifend diam. Pellentesque commodo consectetur ultricies. Vestibulum leo ex, aliquet vitae ex a, gravida dapibus mi. Nullam ac accumsan justo, nec eleifend diam. Pellentesque commodo consectetur ultricies. Vestibulum leo ex, aliquet vitae ex a, gravida dapibus mi. Nullam ac accumsan justo, nec eleifend diam. Pellentesque commodo consectetur ultricies. Vestibulum leo ex, aliquet vitae ex a, gravida dapibus mi.</div>
-						<a class="btn btn-filled" href="#">Read more</a>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="sidebar">
-					<div class="ttl-section btm-space-2">Gallery</div>
-					<div class="carcase gallery grid-col-2">
-						<a class="img-wrap" href="#"><img src="https://via.placeholder.com/480x480?text=480x480"></a>
-						<a class="img-wrap" href="#"><img src="https://via.placeholder.com/480x480?text=480x480"></a>
-						<a class="img-wrap" href="#"><img src="https://via.placeholder.com/480x480?text=480x480"></a>
-						<a class="img-wrap" href="#"><img src="https://via.placeholder.com/480x480?text=480x480"></a>
-					</div>
-					<div class="ttl-section btm-space-2">News feed - sidebar</div>
-					<div class="">
-						<div class="card">
-							<a class="img-wrap" href="#"><img src="https://via.placeholder.com/480x480?text=480x480"></a>
-							<div class="ttl">Lorem ipsum dolor sit amet</div>
-							<div class="card-actions"><a class="btn btn-outlined" href="#">Read more</a></div>
-						</div>
-						<div class="card">
-							<a class="img-wrap" href="#"><img src="https://via.placeholder.com/480x480?text=480x480"></a>
-							<div class="ttl">Lorem ipsum dolor sit amet</div>
-							<div class="card-actions"><a class="btn btn-outlined" href="#">Read more</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div id="dnd_board"></div>
+
+	<script>
+		(function(){
+			const board = document.querySelector('#dnd_board');
+			var whichCardIsHold; var whichZoneIsLast; var cards; var cardZone; var rowNumber; var zoneNumber;
+
+			globalInitBoard();
+			
+			// [ Init start ] //
+			// Объявление доски с событиями
+			function globalInitBoard(){
+
+				globalMakeBoard(board, 4, 7);
+				globalDropCards(cardZone);
+
+				
+				cardZone.forEach( p => {
+					p.addEventListener("dragover", actionDragOver);
+					p.addEventListener("dragenter", actionDragEnter);
+					p.addEventListener("dragleave", actionDragLeave);
+					p.addEventListener("drop", actionDrop);
+				});
+				cards.forEach( c => {
+					c.addEventListener("dragstart", actionDragStart);
+					c.addEventListener("dragend", actionDragEnd);
+				});
+			}
+
+			// Просто делаем сетку для взаимодействия
+			function globalMakeBoard(board, rows, zones){
+				let i = 0; let j = 0;
+				while(i < rows){
+					let row = document.createElement('div');
+					row.classList.add('dnd_row');
+					while(j < zones){
+						let zone = document.createElement('div');
+						zone.classList.add('dnd_zone');
+						row.append(zone);
+						j++;
+					}
+					board.append(row);
+					j = 0;
+					i++;
+				}
+				
+				rowNumber = rows;
+				zoneNumber = zones;
+				cardZone = document.querySelectorAll('.dnd_zone');
+			}
+
+			function globalDropCards(zones){
+				let i = 0;
+				zones.forEach( zone => {
+					if( i < zoneNumber || i >= zoneNumber*(rowNumber-1) ){
+						let card = document.createElement('div');
+						card.classList.add('dnd_card');
+						if( i < zoneNumber ){
+							card.classList.add('enemy');
+						}
+						card.setAttribute('draggable', 'true');
+						card.setAttribute('data-hp', Math.floor(Math.random() * 20));
+						card.setAttribute('data-dmg', Math.floor(Math.random() * 10));
+						zone.append(card);
+					}
+					i++;
+				});
+
+				cards = document.querySelectorAll('.dnd_card');
+			}
+			// [ Init end ] //
+
+			// [ Gameplay start ] //
+			function gpCardBattle(holded, placed){
+				let placedDMG = placed.dataset.dmg*1;
+				let holdedDMG = holded.dataset.dmg*1;
+				let currentZone = Array.from(cardZone).indexOf(placed.parentNode);
+
+				if(whichZoneIsLast != currentZone){
+					placed.dataset.hp = placed.dataset.hp*1 - holdedDMG;
+					holded.dataset.hp = holded.dataset.hp*1 - placedDMG;
+					if( placed.dataset.hp*1 > 0 && holded.dataset.hp*1 < 1 ){
+						console.log('111');
+						holded.remove();
+					} else {
+						console.log('222');
+						placed.parentNode.append(holded);
+						placed.remove();
+					}
+				}
+			}
+			// [ Gameplay end ] //
+
+			// [ Listeners start ] //
+			function actionDragStart(){
+				this.classList.add('hold');
+				whichCardIsHold = Array.from(cards).indexOf(this);
+				whichZoneIsLast = Array.from(cardZone).indexOf(this.parentNode);
+			}
+			function actionDragEnd(){
+				this.classList.remove('hold');
+			}
+			function actionDragOver(e){
+				e.preventDefault();
+			}
+			function actionDrop(){
+				this.classList.remove('placeble');
+				if( !this.hasChildNodes() ){
+					this.append(cards[whichCardIsHold]);
+				} else {
+					gpCardBattle(cards[whichCardIsHold], this.querySelector('.dnd_card'));
+				}
+			}
+			function actionDragEnter(){
+				this.classList.add('placeble');
+			}
+			function actionDragLeave(){
+				this.classList.remove('placeble');
+			}
+			// [ Listeners end ] //
+		})();
+	</script>
+	<style>
+		#dnd_board .dnd_row{
+			display: flex;
+		}
+		#dnd_board .dnd_row + .dnd_row{
+			margin-top: 5px;
+		}
+
+		#dnd_board .dnd_zone{
+			width: 140px;
+			height: 200px;
+			border: 1px dashed rgb(234 234 234);
+			z-index: 5;
+		}
+		#dnd_board .dnd_zone + .dnd_zone{
+			margin-left: 5px;
+		}
+		#dnd_board .dnd_zone.placeble{
+			border: 1px dashed #000;
+			background-color: rgb(199, 199, 199);
+		}
+		#dnd_board .dnd_card{
+			box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 64%);
+			width: 140px;
+			height: 200px;
+			position: relative;
+			cursor: move;
+			z-index: 10;
+		}
+		#dnd_board .dnd_zone + .dnd_card, #dnd_board .dnd_card + .dnd_card{
+			height: 50%;
+		}
+
+		#dnd_board .dnd_card::before, #dnd_board .dnd_card::after{
+			display: block;
+			position: absolute;
+			padding: 4px;
+			margin: 4px;
+			width: 20px;
+			text-align: center;
+			bottom: 0;
+			border-radius: 30px;
+			color: #fff;
+			font-weight: 600;
+		} 
+		#dnd_board .dnd_card::before {
+			content: attr(data-hp);
+			right: 0;
+			background-color: green;
+		}
+		#dnd_board .dnd_card::after {
+			content: attr(data-dmg);
+			left: 0;
+			background-color: red;
+		}
+		#dnd_board .dnd_card.enemy{
+			background-color: rgb(211, 83, 83);
+		}
+		#dnd_board .dnd_card:not(.enemy){
+			background-color: rgb(92, 170, 243);
+		}
+		#dnd_board .dnd_card.hold{
+		}
+	</style>
 </body>
 </html>
